@@ -9,7 +9,10 @@ The idea behind PageRank is that "good" pages refer to other "good" pages. There
 	PR(p) = \frac{q}{T} + (1 - q) \sum_{i} \frac{PR(r_i)}{L(r_i)} 
 \end{equation}
 
-where $T$ is the total number of pages, $q$ is the probability of leaving page $p$ ($q = 0:15$ is suggested in the original PageRank paper), $ri$ are the pages that point to page $p$, and $L(ri)$ is the number of links on page $ri$. These values ​​can be used as page rank and can be calculated using an iterative algorithm that converges quite quickly since we are interested in the rank order rather than the actual values. The term $q$ is called the damping factor, as it exponentially decreases link spam based on sequences of links returning to a page.
+where $T$ is the total number of pages, $q$ is the probability of
+leaving page $p$ ($q = 0:15$ is suggested in the original PageRank paper), $ri$ are the pages that point to page $p$, and $L(ri)$ is the
+number of links on page $ri$. These values can be used as page rank and
+can be calculated using an iterative algorithm that converges quite quickly since we are interested in the rank order rather than the actual values. The term $q$ is called the damping factor, as it exponentially decreases link spam based on sequences of links returning to a page.
 %donde $T$ es el número total de páginas, $q$ es la probabilidad de salir de la página $p$ (en el trabajo original de PageRank se sugiere $q = 0:15$), $ri$ son las páginas que apuntan a la página $p$, y $L(ri)$ es el número de enlaces en la página $ri$. Estos valores se pueden usar como clasificación de páginas y se pueden calcular mediante un algoritmo iterativo que converge bastante rápido, ya que estamos interesados en el orden de clasificación en lugar de los valores reales. El término $q$ se denomina factor de amortiguamiento, ya que disminuye exponencialmente el spam de enlaces basado en secuencias de enlaces que regresan a una página.
 
 From here arises a variant of Google's original PageRank algorithm, called WLRank proposed in the work of Ri Baeza-Yates and Emilio Davies \cite{baeza2004web}.
@@ -46,32 +49,42 @@ Similar to PageRank, $R(i)$ corresponds to the probability of reaching page $i$ 
 The term $AL(j;i)$ gives more value to links where the creator explains in more detail what Web resource is being linked to. For example, this gives less weight to links described with home or here. Finally, the term $RP(j; i)$ gives more weight to links that are at the top of the page than at the bottom of the page (physically in the HTML code, not necessarily in the browser view).
 %El término $AL(j;i)$ da más valor a los enlaces en los que el creador explica con más detalle a qué recurso Web se está enlazando. Por ejemplo, esto le da menos peso a los enlaces descritos con home o aquí. Finalmente, el término $RP(j; i)$ da más peso a los enlaces que están al principio de la página que al final de la página (físicamente en el código HTML, no necesariamente en la vista del navegador).
 
-Gracias a esta mejora sobre la fórmula original de PageRank es posible entonces darle mayor consideración en la fórmula a aquellos enlaces que tienen más pesos que otros.
+Thanks to this improvement over the original PageRank formula, it is then possible to give greater consideration in the formula to those links that have more weights than others.
+%Gracias a esta mejora sobre la fórmula original de PageRank es posible entonces darle mayor consideración en la fórmula a aquellos enlaces que tienen más pesos que otros.
 
-Se procedió a adecuar nuestra fórmula de modo de contemplar los pesos en los enlaces y de esta forma realizar ciertas pruebas simples que comprueben que la modificación realizada consigue ajustar a nuestro modelo en una mejora respecto al algoritmo de PageRank original.
+We proceeded to adapt our formula in order to contemplate the weights in the links and in this way carry out certain simple tests that verify that the modification made manages to adjust our model in an improvement with respect to the original PageRank algorithm.
+%Se procedió a adecuar nuestra fórmula de modo de contemplar los pesos en los enlaces y de esta forma realizar ciertas pruebas simples que comprueben que la modificación realizada consigue ajustar a nuestro modelo en una mejora respecto al algoritmo de PageRank original.
 
-A continuación en la Figura \ref{fig:6nodos-pageRank-peso-enlaces} se muestra el ejemplo de 6 nodos mostrado con anterioridad en donde se puede observar el resultado ponderando los enlaces.
+Below in Figure \ref{fig:6nodos-pageRank-peso-enlaces} shows the example of 6 nodes shown previously where you can see the result weighting the links.
+%A continuación en la Figura \ref{fig:6nodos-pageRank-peso-enlaces} se muestra el ejemplo de 6 nodos mostrado con anterioridad en donde se puede observar el resultado ponderando los enlaces.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.50\linewidth]{6nodos-pageRank-peso-enlaces.png}
-	\caption{Resultado de ejecución de PageRank para 6 nodos con modificación WLRank.} 
+	\caption{PageRank run result for 6 nodes with WLRank modification.} 
 	\label{fig:6nodos-pageRank-peso-enlaces}
 \end{figure}
 
-Se puede apreciar a simple vista que ahora al tener peso las relaciones en la fórmula el resultado es mucho más preciso, existen muchos casos en cómun entre $145262$ y $116587$, lo que justifica la modificación en el ranking general. El nodo $145262$ tiene $1$ caso en cómún con $132310$ y $18$ con $116587$, un total de $19$ relaciones a ese nodo. Por otra parte el nodo que quedó en segunda posición en el ranking ($145053$), tiene un total de $15$ enlaces provenientes de $13$ casos en común con el nodo $129137$ y de $1$ caso en cómun con el nodo $116587$ y con el nodo $123109$.
+It can be seen with the naked eye that now, having weight in the relationships in the formula, the result is much more precise, there are many common cases between $145262$ and $116587$, which justifies the change in the general ranking. Node $145262$ has $1$ in common with $132310$ and $18$ with $116587$, a total of $19$ relations to that node. On the other hand, the node that was in second position in the ranking ($145053$), has a total of $15$ links coming from $13$ cases in common with node $129137$ and $1$ in common with node $116587$ and with node $123109$.
+%Se puede apreciar a simple vista que ahora al tener peso las relaciones en la fórmula el resultado es mucho más preciso, existen muchos casos en cómun entre $145262$ y $116587$, lo que justifica la modificación en el ranking general. El nodo $145262$ tiene $1$ caso en cómún con $132310$ y $18$ con $116587$, un total de $19$ relaciones a ese nodo. Por otra parte el nodo que quedó en segunda posición en el ranking ($145053$), tiene un total de $15$ enlaces provenientes de $13$ casos en común con el nodo $129137$ y de $1$ caso en cómun con el nodo $116587$ y con el nodo $123109$.
 
-\subsubsection{Mejoras a PageRank - Peso a los nodos}
+%\subsubsection{Mejoras a PageRank - Peso a los nodos}
+\subsubsection{Improvements to PageRank - Weight to nodes}
 
-Como se mencionó en el punto anterior, el algoritmo de PageRank en su versión original, no hace valorar al peso de los enlaces (tema propuesto y resuelto con anterioridad), ni el peso de los nodos. Este último es otro punto muy importante a la hora de evaluar a los individuos en los grafos resultantes, como así también a la hora del posible descubrimiento de una supuesta banda delictiva.
+As mentioned in the previous point, the PageRank algorithm in its original version does not assess the weight of the links (a previously proposed and resolved issue), nor the weight of the nodes. This last point is another very important point when evaluating the individuals in the resulting graphs, as well as when it comes to the possible discovery of a supposed criminal gang.
+%Como se mencionó en el punto anterior, el algoritmo de PageRank en su versión original, no hace valorar al peso de los enlaces (tema propuesto y resuelto con anterioridad), ni el peso de los nodos. Este último es otro punto muy importante a la hora de evaluar a los individuos en los grafos resultantes, como así también a la hora del posible descubrimiento de una supuesta banda delictiva.
 
-Es casi imposible evaluar y calificar de banda delictiva a individuos que tengan un bajo grado de relación entre sí, y que además cada uno tenga como antecedente penal un número pequeño de casos en su haber.
+It is almost impossible to evaluate and classify as a criminal gang individuals who have a low degree of relationship with each other, and who also each have a small number of criminal records to their credit.
+%Es casi imposible evaluar y calificar de banda delictiva a individuos que tengan un bajo grado de relación entre sí, y que además cada uno tenga como antecedente penal un número pequeño de casos en su haber.
 
-Para ello, se procedió del mismo modo que con los pesos en los enlaces, a modificar la fórmula original de PageRank en pos de obtener un resultado más significativo y darle más importancia en el grafo a aquellos nodos que tengan más casos (más tamaño en el grafo), cuando se encuentren relacionados con otros con la misma cantidad de relaciones. El objetivo principal de dicha modificación es generar un desempate de valor de ranking para aquellos nodos que en el algoritmo original de pagerank obtengan igual puntaje. Ante una situación de igualdad de ranking, el nodo que tenga un mayor tamaño quedará con un mayor valor ponderado.
+To do this, we proceeded in the same way as with the weights in the links, to modify the original PageRank formula in order to obtain a more significant result and give more importance in the graph to those nodes that have more cases (greater size in the graph). graph), when they are related to others with the same number of relationships. The main objective of this modification is to generate a ranking value tiebreaker for those nodes that obtain the same score in the original pagerank algorithm. In a situation of equal ranking, the node that has a larger size will have a higher weighted value.
+%Para ello, se procedió del mismo modo que con los pesos en los enlaces, a modificar la fórmula original de PageRank en pos de obtener un resultado más significativo y darle más importancia en el grafo a aquellos nodos que tengan más casos (más tamaño en el grafo), cuando se encuentren relacionados con otros con la misma cantidad de relaciones. El objetivo principal de dicha modificación es generar un desempate de valor de ranking para aquellos nodos que en el algoritmo original de pagerank obtengan igual puntaje. Ante una situación de igualdad de ranking, el nodo que tenga un mayor tamaño quedará con un mayor valor ponderado.
 
-No se encontró bibliografía dedicada que aporte datos para aplicar a la fórmula, por lo que se realizó  en base a lo ya estudiado una modificación propia. 
+No dedicated bibliography was found that provides data to apply to the formula, so an own modification was made based on what has already been studied.
+%No se encontró bibliografía dedicada que aporte datos para aplicar a la fórmula, por lo que se realizó  en base a lo ya estudiado una modificación propia. 
 
-Para comenzar con la ponderación del peso de los nodos, se identifica primero al nodo con mayor peso en el grafo, y luego sobre el resultado de la fórmula de PageRank se procede a sumar un nuevo valor empírico que surge de dividir el tamaño de cada nodo por el tamaño de mayor peso ya calculado, para luego multiplicarlo por el valor de PageRank anteriormente calculado. Cada nuevo valor de ranking sobre cada nodo es sobreescrito y pasa a ser el valor final. A continuación se detalla el algoritmo SQL de actualización.
+To begin with the weighting of the nodes, the node with the greatest weight in the graph is first identified, and then, based on the result of the PageRank formula, a new empirical value is added that arises from dividing the size of each node by the size with the highest weight already calculated, and then multiply it by the previously calculated PageRank value. Each new ranking value on each node is overwritten and becomes the final value. The SQL update algorithm is detailed below.
+%Para comenzar con la ponderación del peso de los nodos, se identifica primero al nodo con mayor peso en el grafo, y luego sobre el resultado de la fórmula de PageRank se procede a sumar un nuevo valor empírico que surge de dividir el tamaño de cada nodo por el tamaño de mayor peso ya calculado, para luego multiplicarlo por el valor de PageRank anteriormente calculado. Cada nuevo valor de ranking sobre cada nodo es sobreescrito y pasa a ser el valor final. A continuación se detalla el algoritmo SQL de actualización.
 
 \begin{scriptsize}{1}
 	\tiny{
@@ -89,26 +102,29 @@ Para comenzar con la ponderación del peso de los nodos, se identifica primero a
 	}
 \end{scriptsize}
 
+Where $Node$ is the Node table, $nodeValue$ is the weight of each node, $NodeMax$ is obtained as the maximum weight value from the Node table, and $rank$ is the previous PageRank value. When carrying out the $SET$, each Ranking is updated for each node.
+%En donde $Node$ es la tabla de los Nodos, $nodeValue$ es el peso de cada nodo, $NodeMax$ se obtiene como el máximo valor de peso de la tabla de Nodos, y $rank$ es el valor previo de PageRank. Al realizar el $SET$ se produce la actualización de cada Ranking para cada nodo. 
 
-En donde $Node$ es la tabla de los Nodos, $nodeValue$ es el peso de cada nodo, $NodeMax$ se obtiene como el máximo valor de peso de la tabla de Nodos, y $rank$ es el valor previo de PageRank. Al realizar el $SET$ se produce la actualización de cada Ranking para cada nodo. 
-
-A continuación se muestra en la Figura \ref{fig:6nodos-pageRank-peso-nodos} el mismo ejemplo de 6 nodos mostrado con anterioridad en donde se puede observar el resultado ponderando sólo los nodos.
+Below is shown in Figure \ref{fig:6nodos-pageRank-peso-nodos} the same example of 6 nodes shown previously where you can see the result weighting only the nodes.
+%A continuación se muestra en la Figura \ref{fig:6nodos-pageRank-peso-nodos} el mismo ejemplo de 6 nodos mostrado con anterioridad en donde se puede observar el resultado ponderando sólo los nodos.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.50\linewidth]{6nodos-pageRank-peso-nodos.png}
-	\caption{Resultado de ejecución de PageRank para 6 nodos con modificación en peso de Nodos.} 
+	\caption{PageRank execution result for 6 nodes with modification in weight of Nodes.} 
 	\label{fig:6nodos-pageRank-peso-nodos}
 \end{figure}
 
-En el mismo es posible observar comparando la ejecución de PageRank, que mantiene el resultado principal de la fórmula original, pero para los casos de nodos con "empate" de ranking, ahora ponderará con mayor valor al que posea un peso mayor. Los nodos $129137$ y $123109$ que en el algortimo original compartían el quinto lugar en el ranking, ahora pueden diferenciarse por su tamaño (cantidad de casos penales de cada persona). El nodo $123109$ posee $68 casos penales$ asociados, quedando en quinto lugar, mientras que el nodo $129137$ se encuentra vinculado a $47 casos penales$, por lo que queda relegado al sexto lugar en el ranking de este grafo.
+In it, it is possible to see, by comparing the execution of PageRank, that it maintains the main result of the original formula, but in the cases of nodes with a ranking "tie", it will now weight the one with the highest weight with the highest value. The nodes $129137$ and $123109$, which in the original algorithm shared fifth place in the ranking, can now be differentiated by their size (number of criminal cases for each person). The $123109$ node has $68 associated criminal cases$, being in fifth place, while the $129137$ node is linked to $47 criminal cases$, for which reason it is relegated to sixth place in the ranking of this graph.
+%En el mismo es posible observar comparando la ejecución de PageRank, que mantiene el resultado principal de la fórmula original, pero para los casos de nodos con "empate" de ranking, ahora ponderará con mayor valor al que posea un peso mayor. Los nodos $129137$ y $123109$ que en el algortimo original compartían el quinto lugar en el ranking, ahora pueden diferenciarse por su tamaño (cantidad de casos penales de cada persona). El nodo $123109$ posee $68 casos penales$ asociados, quedando en quinto lugar, mientras que el nodo $129137$ se encuentra vinculado a $47 casos penales$, por lo que queda relegado al sexto lugar en el ranking de este grafo.
 
-Por último se muestra en la Figura \ref{fig:6nodos-pageRank-peso-nodos-enlaces} el mismo ejemplo, pero ahora con ambas modificaciones aplicadas a la fórmula original de PageRank.
+Finally, Figure \ref{fig:6nodos-pageRank-peso-nodos-enlaces} shows the same example, but now with both modifications applied to the original PageRank formula.
+%Por último se muestra en la Figura \ref{fig:6nodos-pageRank-peso-nodos-enlaces} el mismo ejemplo, pero ahora con ambas modificaciones aplicadas a la fórmula original de PageRank.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.50\linewidth]{6nodos-pageRank-peso-nodos-enlaces.png}
-	\caption{Resultado de ejecución de PageRank para 6 nodos con modificación WLRank y la modificación propia en peso de Nodos.} 
+	\caption{PageRank execution result for 6 nodes with WLRank modification and own modification in Node weight.} 
 	\label{fig:6nodos-pageRank-peso-nodos-enlaces}
 \end{figure}
 

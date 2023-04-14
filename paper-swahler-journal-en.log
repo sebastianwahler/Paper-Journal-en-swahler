@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.21)  12 APR 2023 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.21)  14 APR 2023 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,60 +888,32 @@ LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
  [15 <./images//BandaLCDs1.png>]
 
-! LaTeX Error: Unicode character ​ (U+200B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 ...er of links on page $ri$. These values ​
-                                                  ​can be used as page ran...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ​ (U+200B)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 ...of links on page $ri$. These values ​​
-                                                  can be used as page rank a...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-LaTeX Warning: Citation `baeza2004web' on page 16 undefined on input line 15.
+LaTeX Warning: Citation `baeza2004web' on page 16 undefined on input line 18.
 
 <images//6nodos-pageRank-peso-enlaces.png, id=84, 545.53813pt x 299.61937pt>
 File: images//6nodos-pageRank-peso-enlaces.png Graphic file (type png)
 <use images//6nodos-pageRank-peso-enlaces.png>
 Package pdftex.def Info: images//6nodos-pageRank-peso-enlaces.png  used on inpu
-t line 57.
+t line 63.
 (pdftex.def)             Requested size: 173.56177pt x 95.32239pt.
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
 [16]
-LaTeX Info: Redefining \. on input line 75.
-LaTeX Info: Redefining \% on input line 75.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
  [17 <./images//6nodos-pageRank-peso-enlaces.png>]
 <images//6nodos-pageRank-peso-nodos.png, id=92, 554.07pt x 253.94875pt>
 File: images//6nodos-pageRank-peso-nodos.png Graphic file (type png)
 <use images//6nodos-pageRank-peso-nodos.png>
 Package pdftex.def Info: images//6nodos-pageRank-peso-nodos.png  used on input 
-line 99.
+line 113.
 (pdftex.def)             Requested size: 173.56177pt x 79.54865pt.
 <images//6nodos-pageRank-peso-nodos-enlaces.png, id=93, 547.04375pt x 262.48062
 pt>
 File: images//6nodos-pageRank-peso-nodos-enlaces.png Graphic file (type png)
 <use images//6nodos-pageRank-peso-nodos-enlaces.png>
 Package pdftex.def Info: images//6nodos-pageRank-peso-nodos-enlaces.png  used o
-n input line 110.
+n input line 126.
 (pdftex.def)             Requested size: 173.56177pt x 83.2786pt.
 ) (conclusion.tex
 LaTeX Info: Redefining \. on input line 2.
@@ -952,8 +924,8 @@ LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
  [19 <./images//6nodos-pageRank-peso-nodos-enlaces.png>] (paper-swahler-journal
 -en.bbl
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
 
 [20]
 Underfull \hbox (badness 4739) in paragraph at lines 90--92
@@ -967,8 +939,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--92
  _ de _ los _ LCD _ que _ fue _
  []
 
-LaTeX Info: Redefining \. on input line 175.
-LaTeX Info: Redefining \% on input line 175.
+LaTeX Info: Redefining \. on input line 179.
+LaTeX Info: Redefining \% on input line 179.
 [21])
 LaTeX Info: Redefining \. on input line 226.
 LaTeX Info: Redefining \% on input line 226.
@@ -985,13 +957,13 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 9 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16192 strings out of 478582
- 328787 string characters out of 2843400
+ 16191 strings out of 478582
+ 328781 string characters out of 2843400
  592486 words of memory out of 3000000
- 33988 multiletter control sequences out of 15000+600000
+ 33987 multiletter control sequences out of 15000+600000
  484485 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,10n,94p,2324b,559s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,10n,94p,2324b,558s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\swahler\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
 n/ec/dpi375\ectt0800.pk> <C:\Users\swahler\AppData\Local\MiKTeX\fonts/pk/ljfour
 /jknappen/ec/dpi600\ectt1000.pk> <C:\Users\swahler\AppData\Local\MiKTeX\fonts/p
@@ -1015,7 +987,7 @@ pfb><C:/Users/swahler/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr6.pfb><C:/Users/swahler/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmr7.pfb><C:/Users/swahler/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb>
-Output written on paper-swahler-journal-en.pdf (22 pages, 3394040 bytes).
+Output written on paper-swahler-journal-en.pdf (22 pages, 3394272 bytes).
 PDF statistics:
  662 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
