@@ -3,6 +3,11 @@
 \providecommand{\urlprefix}{URL }
 \providecommand{\doi}[1]{https://doi.org/#1}
 
+\bibitem{baeza2004web}
+Baeza-Yates, R., Davis, E.: Web page ranking using link attributes. In:
+  Proceedings of the 13th international World Wide Web conference on Alternate
+  track papers \& posters. pp. 328--329 (2004)
+
 \bibitem{bichler2013small}
 Bichler, G., Malm, A.: Small arms, big guns: a dynamic model of illicit market
   opportunity. Global Crime  \textbf{14}(2-3),  261--286 (2013)
